@@ -3,7 +3,8 @@
 
 @theme {
   --body-font: "Poppins", "sans-serif";
-  --primary-color: #875cf5;
+  --container-color: #f8f8f8;
+  --shadow-card: rgba(0, 0, 0, 0.1);
 }
 
 @layer base {
@@ -12,15 +13,14 @@
   }
 
   body {
-    background: #fcfbfc;
     overflow-x: hidden;
   }
 }
 
-.bg-primary {
-  background: var(--primary-color);
+.bg-container {
+  background: var(--container-color);
 }
 
-.text-primary {
-  color: var(--primary-color);
+.shadow-card {
+  box-shadow: 0 0 8px var(--shadow-card);
 }
