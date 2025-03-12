@@ -1,7 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setAuth, setLogin, setLogout, setProfile } from "./reducer";
-import { reqLogin } from "./request";
+import {
+  setAuth,
+  setLogin,
+  setLogout,
+  setProfile,
+  setRegister,
+} from "./reducer";
+import { reqLogin, reqRegister } from "./request";
+import toast from "react-hot-toast";
 
 const useLogin = () => {
   const dispatch = useDispatch();
@@ -11,7 +18,7 @@ const useLogin = () => {
   const handleChangeLogin = (e) =>
     dispatch(setLogin({ name: e.target.name, value: e.target.value }));
 
-  const onLogin = async (e) => {
+  const onLogin = async () => {
     try {
       const res = await reqLogin(auth.login);
 
@@ -26,6 +33,7 @@ const useLogin = () => {
       navigate("/");
     } catch (err) {
       console.log(err);
+      toast.error("Invalid credentials");
     }
   };
 
@@ -37,11 +45,31 @@ const useLogin = () => {
     navigate("/login");
   };
 
+  const handleChangeRegister = (e) =>
+    dispatch(setRegister({ name: e.target.name, value: e.target.value }));
+
+  const onRegister = async () => {
+    try {
+      const { cpassword, ...userData } = auth.register;
+
+      await reqRegister(userData);
+
+      // console.log(res.data.data);
+      toast.success("Registration successful");
+      navigate("/login");
+    } catch (err) {
+      // console.log(err);
+      toast.error(err);
+    }
+  };
+
   return {
     ...auth,
     handleChangeLogin,
     onLogin,
     onLogout,
+    onRegister,
+    handleChangeRegister,
   };
 };
 

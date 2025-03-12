@@ -1,12 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initUser = {
-  email: "mengvuthvitou18@gmail.com",
-  password: "18#2025Lt",
+  email: "",
+  password: "",
+};
+
+const createUser = {
+  fullName: "",
+  email: "",
+  password: "",
+  cpassword: "",
 };
 
 const initialState = {
   login: initUser,
+  register: createUser,
   profile: JSON.parse(localStorage.getItem("user") ?? "{}"),
   accessToken: localStorage.getItem("accessToken"),
 };
@@ -25,12 +33,17 @@ const authSlice = createSlice({
       const data = action.payload;
       state.login[data.name] = data.value;
     },
+    setRegister: (state, action) => {
+      const data = action.payload;
+      state.register[data.name] = data.value;
+    },
     setLogout: (state, action) => {
       state.login = initUser;
     },
   },
 });
 
-export const { setAuth, setProfile, setLogin, setLogout } = authSlice.actions;
+export const { setAuth, setProfile, setLogin, setLogout, setRegister } =
+  authSlice.actions;
 
 export default authSlice.reducer;

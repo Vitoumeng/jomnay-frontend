@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLogin } from "../core/action";
 import { Link } from "react-router-dom";
+import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const [show, setShow] = useState(false);
   const { handleChangeLogin, onLogin, login } = useLogin();
   const { email, password } = login;
 
@@ -10,6 +13,10 @@ const Login = () => {
     e.preventDefault();
     if (email && password) {
       onLogin();
+    } else if (!email) {
+      toast.error("Email are required");
+    } else {
+      toast.error("Passowrd are required");
     }
   };
 
@@ -19,7 +26,7 @@ const Login = () => {
         <h3 className="text-4xl uppercase mb-[30px]">Login</h3>
 
         <form className="flex flex-col gap-y-[20px]" onSubmit={onSubmit}>
-          <div className="flex flex-col gap-y-[10px]">
+          <div className="flex flex-col gap-y-[20px]">
             <div className="flex flex-col gap-y-1">
               <label className="text-lg" htmlFor="email">
                 Email
@@ -35,19 +42,26 @@ const Login = () => {
               />
             </div>
 
-            <div className="flex flex-col gap-y-1">
+            <div className="flex relative flex-col gap-y-1">
               <label className="text-lg" htmlFor="password">
                 Password
               </label>
               <input
                 className="w-full h-[50px] p-4 border-[2px] rounded-md outline-0 border-slate-500 focus:border-slate-900"
-                type="password"
+                type={show ? "text" : "password"}
                 id="password"
                 name="password"
                 value={password}
                 onChange={handleChangeLogin}
                 placeholder="password$123"
               />
+
+              <div
+                onClick={() => setShow(!show)}
+                className="absolute bottom-1 right-2 cursor-pointer w-[40px] h-[40px] flex items-center justify-center"
+              >
+                {show ? <RiEyeOffLine /> : <RiEyeLine />}
+              </div>
             </div>
           </div>
 
@@ -61,7 +75,7 @@ const Login = () => {
 
             <p className="text-center text-[14px]">
               Don't have an account?{" "}
-              <Link className="text-primary" to="/register">
+              <Link className="text-purple-600" to="/register">
                 Sign up
               </Link>
             </p>

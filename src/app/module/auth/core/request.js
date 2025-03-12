@@ -6,3 +6,10 @@ export const reqLogin = (payload) =>
       "Content-Type": "application/json",
     },
   });
+
+export const reqRegister = (payload) =>
+  axios.post("auth/register", payload, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });

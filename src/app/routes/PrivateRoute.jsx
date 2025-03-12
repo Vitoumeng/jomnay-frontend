@@ -5,6 +5,7 @@ import Dashboard from "../module/dashboard/Dashboard";
 import Income from "../module/income/Income";
 import Expense from "../module/expense/Expense";
 import { useLogin } from "../module/auth/core/action";
+import Register from "../module/auth/components/Register";
 
 const PrivateRoute = () => {
   const { accessToken } = useLogin();
@@ -20,6 +21,7 @@ const PrivateRoute = () => {
       ) : (
         <>
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/*" element={<Navigate to="/login" />} />
         </>
       )}
