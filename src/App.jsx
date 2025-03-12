@@ -1,9 +1,11 @@
-const App = () => {
+import { Outlet } from "react-router";
+
+function App() {
   return (
     <div>
-      <h1 className="text-center text-2xl">Hello</h1>
+      <Outlet />
     </div>
   );
-};
+}
 
 export default App;
