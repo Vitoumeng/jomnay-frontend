@@ -59,7 +59,7 @@ const useLogin = () => {
       navigate("/login");
     } catch (err) {
       // console.log(err);
-      toast.error(err.message);
+      toast.error("Email already registered");
     }
   };
 
