@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initUser = {
-  email: "",
-  password: "",
+  email: "mengvuthvitou18@gmail.com",
+  password: "18#2025Lt",
 };
 
 const createUser = {

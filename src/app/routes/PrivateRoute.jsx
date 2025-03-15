@@ -1,11 +1,10 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import RootLayout from "../layout/RootLayout";
-import Login from "../module/auth/components/Login";
 import Dashboard from "../module/dashboard/Dashboard";
 import Income from "../module/income/Income";
 import Expense from "../module/expense/Expense";
 import { useLogin } from "../module/auth/core/action";
-import Register from "../module/auth/components/Register";
+import Auth from "../module/auth/components/Auth";
 
 const PrivateRoute = () => {
   const { accessToken } = useLogin();
@@ -20,9 +19,8 @@ const PrivateRoute = () => {
         </Route>
       ) : (
         <>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/*" element={<Navigate to="/login" />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/*" element={<Navigate to="/auth" />} />
         </>
       )}
     </Routes>

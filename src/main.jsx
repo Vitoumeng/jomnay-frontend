@@ -13,7 +13,7 @@ createRoot(document.getElementById("root")).render(
   <Provider store={store}>
     <StrictMode>
       <AppRoute />
-      <Toaster position="bottom-right" reverseOrder={false} />
+      <Toaster />
     </StrictMode>
   </Provider>
 );

@@ -32,7 +32,7 @@ const useLogin = () => {
 
       navigate("/");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       toast.error("Invalid credentials");
     }
   };
@@ -59,7 +59,7 @@ const useLogin = () => {
       navigate("/login");
     } catch (err) {
       // console.log(err);
-      toast.error(err);
+      toast.error(err.message);
     }
   };
 
