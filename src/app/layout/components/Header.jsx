@@ -6,7 +6,7 @@ const Header = ({ title }) => {
   const { handleCollapse } = useLayout();
 
   return (
-    <header className="sticky top-0 left-0 p-[40px] bg-[#f8f8f8] h-[90px] flex items-center gap-x-[15px] border-b-[2px] border-[#69696918]">
+    <header className="sticky z-20 top-0 left-0 p-[40px] bg-[#f8f8f8] h-[90px] flex items-center gap-x-[15px] border-b-[2px] border-[#69696918]">
       <div onClick={handleCollapse} className="text-[28px] cursor-pointer">
         <RiMenuLine />
       </div>

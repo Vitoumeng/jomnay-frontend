@@ -6,7 +6,7 @@ const RecentTransaction = ({ data }) => {
 
   return (
     <div className="p-[20px] bg-[#f8f8f8] border-[2px] border-[#69696905] rounded-md">
-      <h2 className="text-[18px] text-[#3a3a3a]">Recent Transaction</h2>
+      <h2 className="text-[18px] text-[#3a3a3a] font-medium">Recent Transaction</h2>
 
       <div className="mt-[20px]">
         {data.slice(0, 5).map((item, index) => (
