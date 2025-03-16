@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Logo from "../../../../template/assets/big_logo.png";
-import Login from "./Login";
-import Register from "./Register";
+import Logo from "../../../template/assets/big_logo.png";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 const Auth = () => {
   const [show, setShow] = useState(false);

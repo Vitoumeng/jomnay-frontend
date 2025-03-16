@@ -15,13 +15,13 @@ const Sidebar = ({ collap }) => {
         collap ? "left-[-280px]" : "left-0"
       } fixed top-0 w-[260px] transition-[left] duration-400 bg-[#3a3a3a] min-h-screen flex flex-col items-center gap-y-[60px]`}
     >
-      <div className="h-[180px] w-[240px] flex items-center justify-center">
+      <div className="h-[150px] w-[240px] flex items-center justify-center">
         <NavLink to="/">
           <img src={Logo} className="w-[90px]" alt="Jomnay Logo" />
         </NavLink>
       </div>
 
-      <ul className="flex pl-[40px] w-full flex-col gap-y-[20px] items-start">
+      <ul className="flex pl-[50px] w-full flex-col gap-y-[20px] items-start">
         {links.map((item, index) => (
           <li className="w-full" key={index}>
             <NavLink
