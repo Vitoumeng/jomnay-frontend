@@ -4,8 +4,7 @@ const Card = ({ title, total, type }) => {
   const formattedTotal = total.toFixed(2);
   
   return (
-    <div className="p-[20px] relative rounded-md bg-[#f8f8f8] flex items-center gap-x-[30px]">
-      <div className="absolute top-0 left-0 w-full h-full shadow-[0px_0px_8px_rgba(0,0,0,0.07)] rounded-md"></div>{" "}
+    <div className="p-[20px] border-[2px] border-[#69696905] rounded-md bg-[#f8f8f8] flex items-center gap-x-[30px]">
       <Icons type={type} />
       <div>
         <span className="text-[#696969] text-[14px]">{title}</span>
