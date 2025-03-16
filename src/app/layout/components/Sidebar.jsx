@@ -1,18 +1,18 @@
 import { NavLink } from "react-router-dom";
 import Logo from "../../../template/assets/big_logo.png";
-import { RiHandCoinLine, RiHome5Line, RiWallet3Line } from "react-icons/ri";
+import { RiExchangeDollarLine, RiHome5Line, RiWallet3Line } from "react-icons/ri";
 
 const links = [
   { path: "/", name: "Dashboard", icon: RiHome5Line },
   { path: "/income", name: "Income", icon: RiWallet3Line },
-  { path: "/expense", name: "Expense", icon: RiHandCoinLine },
+  { path: "/expense", name: "Expense", icon: RiExchangeDollarLine },
 ];
 
 const Sidebar = ({ collap }) => {
   return (
     <div
       className={`${
-        collap ? "left-[-280px]" : "left-0"
+        collap ? "left-0" : "left-[-280px]"
       } fixed top-0 w-[260px] transition-[left] duration-400 bg-[#3a3a3a] min-h-screen flex flex-col items-center gap-y-[60px]`}
     >
       <div className="h-[150px] w-[240px] flex items-center justify-center">

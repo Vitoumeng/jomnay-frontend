@@ -12,7 +12,7 @@ const RootLayout = () => {
 
       <main
         className={`${
-          collap ? "ml-0" : "ml-[260px]"
+          collap ? "ml-[260px]" : "ml-0"
         } transition-[margin] duration-300`}
       >
         <Outlet />
