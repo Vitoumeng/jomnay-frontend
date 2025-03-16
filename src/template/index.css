@@ -3,16 +3,6 @@
 
 @theme {
   --font-popins: "Poppins", "sans-serif";
-  --first: #efbb5e;
-  --first-alt: #e5b35a;
-  --text: #696969;
-  --title: #3a3a3a;
-  --green: #16a34abf;
-  --red: #dc2626bf;
-  --blue: #2563ebbf;
-  --bg: #ffffff;
-  --container: #f8f8f8;
-  --shadow: 0px 0px 16px rgba(0, 0, 0, 0.03);
 }
 
 @layer base {

@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import RootLayout from "../layout/RootLayout";
-import Dashboard from "../module/dashboard/Dashboard";
+import RootLayout from "../layout/components/RootLayout";
+import Dashboard from "../module/dashboard/components/Dashboard";
 import Income from "../module/income/Income";
 import Expense from "../module/expense/Expense";
 import { useLogin } from "../module/auth/core/action";
