@@ -1,12 +1,13 @@
 import React from "react";
 import Transaction from "./Transaction";
 import Financial from "./Financial";
+import LastExpense from "./LastExpense";
 
 const SectionContainer = ({ data }) => {
-  const { recentTransactions, totalExpense, totalIncome, totalBalance } = data;
+  const { recentTransactions, totalExpense, totalIncome, totalBalance, last30daysExpense } = data;
 
   return (
-    <section className="p-[40px] grid grid-cols-2 gap-x-[20px]">
+    <section className="p-[40px] grid grid-cols-2 gap-[20px]">
       <Transaction data={recentTransactions} />
 
       <Financial
@@ -14,6 +15,9 @@ const SectionContainer = ({ data }) => {
         expense={totalExpense}
         income={totalIncome}
       />
+
+      <LastExpense data={last30daysExpense} />
+
     </section>
   );
 };
